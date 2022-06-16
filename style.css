@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    height:  100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #7bed9f,#70a1ff);
+}
+
+.container{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container .toggle{
+    display: flex;
+    background: #fff;
+    height: 60px;
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    z-index: 100;
+    transition: 1s;
+    cursor: pointer;
+   
+}
+
+.container.active .toggle{
+    transform: rotate(630deg);
+    
+}
+
+.container.active .toggle .svg-inline--fa.fa-w-6{
+    display: none;
+    
+}
+
+.container .toggle::before{  
+      font-size: 2.5rem;
+      font-weight: 800;
+      transform: rotate(45deg);
+}
+.container.active .toggle::before{  
+    content:"\2b";
+}
+
+
+
+.container  li{
+    position: absolute;
+    list-style: none;
+    transform-origin: center;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    border-radius: 50%;
+    transition: .4s;
+    transition-delay: calc(0.1s * var(--i));
+    opacity: 0;
+    visibility: hidden;
+    font-size: 1rem;
+}
+
+
+
+.container  li:nth-child(2){
+    transition-delay: .1s;
+}
+
+.container  li:nth-child(3){
+    transition-delay: .2s;
+}
+
+.container  li:nth-child(4){
+    transition-delay: .3s;
+}
+
+.container  li:nth-child(5){
+    transition-delay: .4s;
+}
+
+.container.active  li:nth-child(2){
+    transform: translateY(65px);
+    opacity: 1;
+    visibility: visible;
+}
+
+.container.active  li:nth-child(3){
+    transform: translateY(calc(65px * 2));
+    opacity: 1;
+    visibility: visible;
+}
+
+.container.active  li:nth-child(4){
+    transform: translateY(calc( 65px * 3));
+    opacity: 1;
+    visibility: visible;
+}
+
+.container.active  li:nth-child(5){
+    transform: translateY(calc( 65px * 4));
+    opacity: 1;
+    visibility: visible;
+}
+
+.container  li a{
+    color: #70a1ff;
+}
+
+.container  li a:hover{
+    color: #7bed9f;
+}
+
+
